@@ -1,10 +1,25 @@
 [LeetCode 3373-(!3372)] : (https://leetcode.com/problems/maximize-the-number-of-target-nodes-after-connecting-trees-ii/description/?envType=problem-list-v2&envId=2c9wy0k3)
 
-Here in this question there is a solid requirement that is needed that we are needed to count no nodes which are odd distances and even distances So : 
+### Problem Logic Explanation
 
-Main Logic is the coloring problem like we color a depth as one color and the next depth with 2nd color and next with 1st so we are using only 2 colors to paint the tree each depth one color 
+In this problem, the key requirement is to **count the number of nodes that are at odd distances and even distances**.  
 
-so from same color to same color the distance will be even and odd with differet color  so this can be used here
+The main logic comes from the **graph coloring (bipartite) idea**:
+
+- We can think of the tree as being "painted" using **two colors**, where each depth level alternates between the two colors.  
+  - Depth 0 → Color 1  
+  - Depth 1 → Color 2  
+  - Depth 2 → Color 1  
+  - Depth 3 → Color 2  
+  - … and so on.  
+
+- This alternating coloring helps because:  
+  - If two nodes share the **same color**, the distance between them will always be **even**.  
+  - If two nodes have **different colors**, the distance between them will always be **odd**.  
+
+So, by splitting the tree nodes into two groups based on depth parity (even-depth nodes vs odd-depth nodes),  
+we can directly compute the required counts of nodes at odd/even distances.  
+
 
 
 ``` java
