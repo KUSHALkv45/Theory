@@ -47,68 +47,41 @@ class Solution {
             adj2.get(i[1]).add(i[0]);
         }
 
-        // int odd = 0;
-        // int even = 0;
+        int[] req2 = new int[2];
+        int[] req1 = new int[2];
 
-        int [] req2 = new int [2];
+        boolean[] par1 = new boolean[n];
+        boolean[] par2 = new boolean[m];
 
-        rohan(true,-1,0,adj2,req2);
+        rohan1(true, -1, 0, adj1, req1, par1);
+        rohan1(true, -1, 0, adj2, req2, par2);
 
-        int [] req1 = new int [2];
+        int[] ans = new int[n];
 
-        
-
-        boolean [] par1 = new boolean [n];
-
-        rohan1(true,-1,0,adj1,req1,par1);
-
-        int [] ans = new int [n];
-
-        for(int i = 0 ; i < n ; i++){
-            if(par1[i]){
-                ans[i] = req1[0] + Math.max(req2[0],req2[1]);
-            }
-            else{
-                ans[i] = req1[1] + Math.max(req2[0],req2[1]);
+        for (int i = 0; i < n; i++) {
+            if (par1[i]) {
+                ans[i] = req1[0] + Math.max(req2[0], req2[1]);
+            } else {
+                ans[i] = req1[1] + Math.max(req2[0], req2[1]);
             }
         }
 
-        // System.out.println(Arrays.toString(req1));
-        // System.out.println(Arrays.toString(req2));
-        // System.out.println(Arrays.toString(par1));
-
-        return ans ;
-
-        
-    }
-    private void rohan(boolean isOdd , int par , int node , List<List<Integer>> adj , int [] req){
-        if(isOdd){
-            req[0]++;
-        }
-        else{
-            req[1]++;
-        }
-        for(int i : adj.get(node)){
-            if(i != par){
-                rohan(!isOdd,node,i,adj,req);
-            }
-        }
+        return ans;
     }
 
-    private void rohan1(boolean isOdd , int par , int node , List<List<Integer>> adj , int [] req , boolean [] pari){
-        if(isOdd){
+    private void rohan1(boolean isOdd, int par, int node, List<List<Integer>> adj, int[] req, boolean[] pari) {
+        if (isOdd) {
             req[0]++;
             pari[node] = true;
-        }
-        else{
+        } else {
             req[1]++;
         }
-        for(int i : adj.get(node)){
-            if(i != par){
-                rohan1(!isOdd,node,i,adj,req,pari);
+        for (int i : adj.get(node)) {
+            if (i != par) {
+                rohan1(!isOdd, node, i, adj, req, pari);
             }
         }
-    } 
+    }
 }
 ```
 
