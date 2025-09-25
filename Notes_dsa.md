@@ -7,7 +7,7 @@ Main Logic is the coloring problem like we color a depth as one color and the ne
 so from same color to same color the distance will be even and odd with differet color  so this can be used here
 
 
-<code>```java</code> 
+``` java
 class Solution {
     public int[] maxTargetNodes(int[][] edges1, int[][] edges2) {
         int n = edges1.length + 1;
@@ -95,7 +95,7 @@ class Solution {
         }
     } 
 }
-<code>```</code> 
+```
 
 
 
