@@ -90,7 +90,7 @@ class Solution {
 
 ``` java
 
-boolean [] vis = new boolean [words.length];
+        boolean [] vis = new boolean [words.length];
         int [] len = new int [words.length];
 
         for(int i = 0 ; i < vis.length ; i++){
