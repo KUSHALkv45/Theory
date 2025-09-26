@@ -84,6 +84,47 @@ class Solution {
     }
 }
 ```
+[Longest path  in DAG] :(https://leetcode.com/problems/longest-string-chain/description/?envType=problem-list-v2&envId=2c9wy0k3)
+
+***MEMO : DP : Longest Path in a Graph***
+
+``` java
+
+boolean [] vis = new boolean [words.length];
+        int [] len = new int [words.length];
+
+        for(int i = 0 ; i < vis.length ; i++){
+            if(!vis[i]){
+                rohan(i,vis,len,adj);
+            }
+        }
+
+        int max = 1;
+
+        for(int i : len){
+            if(i > max){
+                max = i;
+            }
+        }
+
+        return max;
+
+private int rohan(int curr , boolean [] vis , int [] len , List<List<Integer>> adj ){
+        len[curr]++;
+        vis[curr] = true;
+        int max = 0;
+        for(int i : adj.get(curr)){
+            if(vis[i]){
+                max = Math.max(len[i],max);
+            }
+            else{
+                max = Math.max(max,rohan(i,vis,len,adj));
+            }
+        }
+        len[curr] += max;
+
+        return len[curr];
+    }
 
 
 
