@@ -126,6 +126,13 @@ private int rohan(int curr , boolean [] vis , int [] len , List<List<Integer>> a
         return len[curr];
     }
 
+```
+
+
+*** Binary Search Revise for Interviews Always ***
+Striver Sheat all questions +
+
+[Min of MAX LC 2616] :(https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/description/) 
 
 
 
