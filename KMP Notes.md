@@ -38,8 +38,9 @@ consider s0s1s2s3s4s5s6s7 as pattern
 - why are we not checking from start here is because if there was a match before then we wouldn't be here ***(SMH+ass check this in future)**
 
 
--[Shortest Palindrome] : (https://leetcode.com/problems/shortest-palindrome/description/)
--[rotated Strings or not] : (https://www.geeksforgeeks.org/problems/check-if-strings-are-rotations-of-each-other-or-not-1587115620/1)
+- [Shortest Palindrome] : (https://leetcode.com/problems/shortest-palindrome/description/)
+- [rotated Strings or not] : (https://www.geeksforgeeks.org/problems/check-if-strings-are-rotations-of-each-other-or-not-1587115620/1)
+
 
 
 
