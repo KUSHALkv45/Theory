@@ -30,6 +30,14 @@ consider s0s1s2s3s4s5s6s7 as pattern
 
 
 
+****Main LOGIC For KMP****
+- We find (LPS ::-) Longest prefix for current Suffix : example is consider : "aacecaaaa" (012345678)
+- array will be like this LPS array : [0,1,0,0,0,1,2,2,2]
+- This table gives us characters to skip matching which will match already when u start checking from first index
+- i.e we are checking for match for the above pattern String in some String(EX) and the EX is matching till **6th** index and usually in brute force we start from beginning here but as we know that in our current matched String till now the first 2 characters **(lps[6] = 2 )** we start checking from 2nd index in our pattern this helps us reduce the time complexity and also we don't need to check from the beg of EX String again  **fun algorithm (my ass)**  
+
+
+
 
 
 
